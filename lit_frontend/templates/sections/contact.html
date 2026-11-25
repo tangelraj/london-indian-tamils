@@ -1,0 +1,138 @@
+{% load static %}
+
+{% if contact_section %}
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-container">
+
+        <!-- Contact Heading -->
+
+        <div class="contact-heading">
+
+            <p class="contact-eyebrow">
+                {{ contact_section.eyebrow }}
+            </p>
+
+            <h2>
+                {{ contact_section.title }}
+            </h2>
+
+        </div>
+
+
+        <!-- Contact Information -->
+
+        <div class="contact-information">
+
+            <!-- Location -->
+
+            <div class="contact-location">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    {{ contact_section.location }}
+                </span>
+
+            </div>
+
+
+            <!-- Email and Phone -->
+
+            <div class="contact-details">
+
+                <a href="mailto:{{ contact_section.email }}"
+                   class="contact-detail">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <span>
+                        {{ contact_section.email }}
+                    </span>
+
+                </a>
+
+                <a href="tel:{{ contact_section.phone|cut:' ' }}"
+                   class="contact-detail">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <span>
+                        {{ contact_section.phone }}
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Horizontal Divider -->
+
+        <div class="contact-divider"></div>
+
+
+        <!-- Founder Information -->
+
+        <div class="contact-founder">
+
+            <span class="contact-founder-name">
+                {{ contact_section.founder_name }}
+            </span>
+
+            <span class="contact-founder-designation">
+
+                — {{ contact_section.founder_designation }}
+
+            </span>
+
+        </div>
+
+
+        <!-- Contact Buttons -->
+
+        <div class="contact-buttons">
+
+            {% for button in contact_buttons %}
+
+                {% if button.link %}
+
+                    <a href="{{ button.link }}"
+                       class="contact-action-button"
+
+                       {% if button.title == "INSTAGRAM" or button.title == "FACEBOOK" %}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                       {% endif %}>
+
+                        <i class="{{ button.icon }}"></i>
+
+                        {{ button.title }}
+
+                    </a>
+
+                {% else %}
+
+                    <button type="button"
+                            class="contact-action-button"
+                            disabled>
+
+                        <i class="{{ button.icon }}"></i>
+
+                        {{ button.title }}
+
+                    </button>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

@@ -1,0 +1,118 @@
+{% load static %}
+
+{% if community %}
+
+<section class="community-section" id="community">
+
+    <!-- Optional Background Image -->
+
+    {% if community.background_image %}
+
+        <img src="{{ community.background_image.url }}"
+             class="community-background-image"
+             alt=""
+             aria-hidden="true">
+
+    {% endif %}
+
+
+    <div class="community-container">
+
+        <!-- TOP DECORATIVE LINE -->
+
+        <div class="community-top-line"></div>
+
+
+        <!-- TOP DESCRIPTION -->
+
+        <p class="community-top-text">
+
+            {{ community.top_text }}
+
+        </p>
+
+
+        <!-- SECTION HEADING -->
+
+        <div class="community-heading-wrapper">
+
+            <p class="community-eyebrow">
+
+                {{ community.eyebrow }}
+
+            </p>
+
+            <h2 class="community-heading">
+
+                {{ community.title }}
+
+                <em>{{ community.highlighted_title }}</em>
+
+            </h2>
+
+        </div>
+
+
+        <!-- COMMUNITY CARDS -->
+
+        <div class="community-grid">
+
+            {% for card in community_cards %}
+
+                <article class="community-card {% if card.is_highlighted %}highlighted{% endif %}">
+
+                    <!-- CARD TOP -->
+
+                    <div class="community-card-top">
+
+                        <!-- ICON -->
+
+                        <div class="community-card-icon">
+
+                            {% if card.custom_icon %}
+
+                                <img src="{{ card.custom_icon.url }}"
+                                     alt="">
+
+                            {% else %}
+
+                                <i class="{{ card.icon }}"
+                                   aria-hidden="true"></i>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <!-- CARD NUMBER -->
+
+                        <span class="community-card-number">
+
+                            {{ card.number }}
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- CARD CONTENT -->
+
+                    <div class="community-card-content">
+
+                        <h3>{{ card.title }}</h3>
+
+                        <p>{{ card.description }}</p>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

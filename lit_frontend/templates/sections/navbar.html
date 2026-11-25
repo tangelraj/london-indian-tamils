@@ -1,0 +1,87 @@
+{% load static %}
+
+<header class="header lit-fixed-header" id="litHeader">
+
+    <nav class="navbar">
+
+        <!-- Brand and Logo -->
+
+        <a href="/" class="brand">
+
+            {% if website.logo %}
+
+                <img src="{{ website.logo.url }}"
+                     alt="LIT Logo"
+                     class="logo">
+
+            {% else %}
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="LIT Logo"
+                     class="logo">
+
+            {% endif %}
+
+            <div class="brand-content">
+
+                <h2>
+                    {{ website.site_name }}
+
+                    <span>
+                        {{ website.short_name }}
+                    </span>
+                </h2>
+
+                <p class="tagline">
+                    {{ website.tagline }}
+                </p>
+
+                <p class="brand-description">
+                    {{ website.description }}
+                </p>
+
+            </div>
+
+        </a>
+
+        <!-- Navigation Links -->
+
+        <div class="nav-links" id="navLinks">
+
+            {% for item in navigation_links %}
+
+                <a href="{{ item.link }}">
+                    {{ item.title }}
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Join LIT Button -->
+
+        <a href="{{ website.button_link }}"
+           class="nav-join-btn">
+
+            {{ website.button_text }}
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+        <!-- Mobile Menu -->
+
+        <button type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-controls="navLinks"
+                aria-expanded="false">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </nav>
+
+</header>

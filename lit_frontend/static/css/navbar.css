@@ -1,0 +1,322 @@
+/* ==========================================
+   LIT FIXED NAVBAR
+========================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   FIXED HEADER
+========================================== */
+
+#litHeader.lit-fixed-header {
+
+    position: fixed !important;
+
+    top: 15px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    height: auto;
+
+    margin: 0 !important;
+    padding: 0 5%;
+
+    z-index: 99999 !important;
+
+    transform: none !important;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   NAVBAR DESIGN
+========================================== */
+
+#litHeader .navbar {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    padding: 16px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    background: linear-gradient(
+        110deg,
+        #59283c,
+        #713c43
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 35px;
+
+    box-shadow: 0 8px 30px
+        rgba(16, 24, 46, 0.18);
+}
+
+
+/* ==========================================
+   FLOATING BUTTONS
+========================================== */
+
+.floating-buttons {
+    z-index: 2000;
+}
+
+
+/* ==========================================
+   LARGE SCREEN RESPONSIVE
+========================================== */
+
+@media (max-width: 1500px) {
+
+    #litHeader .navbar {
+        gap: 18px;
+        padding: 14px 20px;
+    }
+
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+
+    #litHeader.lit-fixed-header {
+
+        top: 12px !important;
+
+        padding: 0 4%;
+    }
+
+    #litHeader .navbar {
+
+        padding: 14px 20px;
+
+        border-radius: 25px;
+    }
+
+    #litHeader .nav-links {
+
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 15px 20px;
+
+        background: #602c3e;
+
+        border-radius: 20px;
+
+        max-height: 70vh;
+
+        overflow-y: auto;
+
+        box-shadow: 0 15px 35px
+            rgba(0, 0, 0, 0.2);
+    }
+
+    #litHeader .nav-links.show,
+    #litHeader .nav-links.active,
+    #litHeader .nav-links.open {
+
+        display: flex;
+    }
+
+    #litHeader .nav-links a {
+
+        padding: 14px 10px;
+
+        border-bottom: 1px solid
+            rgba(255, 255, 255, 0.1);
+    }
+
+    #litHeader .nav-links a:last-child {
+
+        border-bottom: none;
+    }
+
+    #litHeader .nav-links a::after {
+
+        display: none;
+    }
+
+    #litHeader .menu-toggle {
+
+        display: block;
+    }
+
+    html {
+
+        scroll-padding-top: 130px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    #litHeader.lit-fixed-header {
+
+        top: 8px !important;
+
+        padding: 0 15px;
+    }
+
+    #litHeader .navbar {
+
+        padding: 12px 15px;
+
+        gap: 12px;
+
+        border-radius: 22px;
+    }
+
+    #litHeader .logo {
+
+        width: 55px;
+        height: 55px;
+
+        flex-shrink: 0;
+    }
+
+    #litHeader .brand {
+
+        gap: 10px;
+
+        min-width: 0;
+
+        flex-shrink: 1;
+    }
+
+    #litHeader .brand-content h2 {
+
+        font-size: 17px;
+    }
+
+    #litHeader .tagline {
+
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+    #litHeader .brand-description {
+
+        display: none;
+    }
+
+    #litHeader .nav-join-btn {
+
+        display: none;
+    }
+
+    #litHeader .menu-toggle {
+
+        display: block;
+
+        font-size: 24px;
+    }
+
+    html {
+
+        scroll-padding-top: 110px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 400px) {
+
+    #litHeader.lit-fixed-header {
+
+        top: 5px !important;
+
+        padding: 0 8px;
+    }
+
+    #litHeader .navbar {
+
+        padding: 10px 12px;
+
+        border-radius: 18px;
+    }
+
+    #litHeader .logo {
+
+        width: 45px;
+        height: 45px;
+    }
+
+    #litHeader .brand-content h2 {
+
+        font-size: 15px;
+    }
+
+    #litHeader .tagline {
+
+        font-size: 8px;
+    }
+
+    html {
+
+        scroll-padding-top: 100px;
+    }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+    }
+
+}

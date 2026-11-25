@@ -1,0 +1,56 @@
+<div class="floating-buttons">
+
+    {% for button in floating_buttons %}
+
+        <a href="{% if button.icon == 'phone' %}{{ button.link|default:'tel:+918792694177' }}{% elif button.icon == 'mail' %}{{ button.link|default:'mailto:tangelraj@gmail.com' }}{% else %}{{ button.link|default:'#' }}{% endif %}"
+
+           class="floating-btn {{ button.icon }}"
+
+           data-bg-color="{{ button.background_color }}"
+
+           title="{{ button.title }}"
+
+           aria-label="{{ button.title }}"
+
+           {% if button.icon == 'instagram' or button.icon == 'whatsapp' or button.icon == 'facebook' %}
+               target="_blank"
+               rel="noopener noreferrer"
+           {% endif %}>
+
+            <!-- Phone Button -->
+
+            {% if button.icon == 'phone' %}
+
+                <i class="fa-solid fa-phone"></i>
+
+            <!-- Email Button -->
+
+            {% elif button.icon == 'mail' %}
+
+                <i class="fa-regular fa-envelope"></i>
+
+            <!-- Instagram Button -->
+
+            {% elif button.icon == 'instagram' %}
+
+                <i class="fa-brands fa-instagram"></i>
+
+            <!-- WhatsApp Button -->
+
+            {% elif button.icon == 'whatsapp' %}
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+            <!-- Facebook Button -->
+
+            {% elif button.icon == 'facebook' %}
+
+                <i class="fa-brands fa-facebook-f"></i>
+
+            {% endif %}
+
+        </a>
+
+    {% endfor %}
+
+</div>

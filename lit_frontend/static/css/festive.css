@@ -1,0 +1,659 @@
+/* ==========================================
+   FESTIVE EVENT SECTION
+========================================== */
+
+.festive-section {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 10px 5.5% 45px;
+    background-color: #f5f4ef;
+    box-sizing: border-box;
+}
+
+.festive-section * {
+    box-sizing: border-box;
+}
+
+.festive-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/about-pattern.svg");
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.45;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   DARK GRADIENT CONTAINER
+========================================== */
+
+.festive-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 45px 50px 35px;
+
+    background:
+        radial-gradient(
+            ellipse at top right,
+            rgba(100, 30, 48, 0.45),
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            #152044 0%,
+            #101830 55%,
+            #0b1025 100%
+        );
+
+    border: 1px solid rgba(227, 166, 59, 0.45);
+    border-radius: 32px;
+
+    box-shadow: 0 20px 50px rgba(16, 24, 46, 0.15);
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.festive-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.festive-heading h2 {
+    max-width: 650px;
+    margin: 0 auto 18px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+
+    color: #e3a63b;
+}
+
+.festive-heading p {
+    max-width: 680px;
+    margin: 0 auto;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   MEDIA CARDS
+========================================== */
+
+.festive-media {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 28px;
+
+    margin: 0 auto 40px;
+}
+
+.festive-media-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 310px;
+    max-width: 100%;
+    padding: 0;
+
+    background-color: rgba(7, 12, 29, 0.65);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+.festive-media-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(227, 166, 59, 0.7);
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================
+   FLYER AND VIDEO IMAGE
+========================================== */
+
+.festive-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+}
+
+.festive-image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 1.2s ease-in-out;
+}
+
+
+/* Image zoom only on hover */
+
+.festive-media-card:hover .festive-image-wrapper img {
+    transform: scale(1.07);
+}
+
+
+/* ==========================================
+   MEDIA CARD CAPTION
+========================================== */
+
+.festive-media-caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    width: 100%;
+    min-height: 50px;
+    padding: 14px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.festive-media-caption i {
+    color: #e3a63b;
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   VIDEO PLAY BUTTON
+========================================== */
+
+.festive-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 74px;
+    height: 74px;
+
+    transform: translate(-50%, -50%);
+
+    background-color: #e3a63b;
+    color: #ffffff;
+
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.festive-play-button i {
+    font-size: 25px;
+    margin-left: 4px;
+}
+
+.festive-media-card:hover .festive-play-button {
+    background-color: #efb74c;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+/* ==========================================
+   BOOKING INFORMATION BOX
+========================================== */
+
+.festive-booking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    width: 100%;
+    padding: 28px 32px;
+
+    background-color: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(227, 166, 59, 0.55);
+    border-radius: 25px;
+}
+
+.festive-booking-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.festive-booking-content h3 {
+    margin: 0 0 15px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(23px, 2.4vw, 34px);
+    font-weight: 600;
+    line-height: 1.3;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   BOOKING DETAILS
+========================================== */
+
+.festive-booking-details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+}
+
+.festive-booking-details span {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.festive-booking-details span:last-child {
+    flex-basis: 100%;
+}
+
+.festive-booking-details i {
+    color: #e3a63b;
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   BOOK NOW BUTTON
+========================================== */
+
+.festive-book-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 14px;
+
+    min-width: 220px;
+    min-height: 55px;
+
+    padding: 15px 28px;
+
+    background-color: #e3a63b;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(227, 166, 59, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.festive-book-button:not(:disabled):hover {
+    transform: translateY(-3px);
+    background-color: #cd902c;
+}
+
+.festive-book-button:disabled {
+    cursor: not-allowed;
+}
+
+.festive-book-button i {
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   INSTAGRAM LINK
+========================================== */
+
+.festive-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin-top: 28px;
+
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.festive-instagram i {
+    color: #e3a63b;
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+.festive-instagram a {
+    color: #e3a63b;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.festive-instagram a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   FLYER AND VIDEO POPUPS
+========================================== */
+
+.festive-dialog {
+    position: fixed;
+
+    width: max-content;
+    max-width: 92vw;
+    max-height: 92vh;
+
+    padding: 45px 15px 15px;
+    margin: auto;
+
+    background-color: #10182e;
+
+    border: 1px solid rgba(227, 166, 59, 0.4);
+    border-radius: 20px;
+
+    overflow: auto;
+    color: #ffffff;
+}
+
+.festive-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(6px);
+}
+
+.festive-full-flyer {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 78vh;
+
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.festive-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #e3a63b;
+    color: #ffffff;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.festive-video {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 85vw;
+    max-height: 75vh;
+
+    border-radius: 10px;
+}
+
+.festive-external-video,
+.festive-video-message {
+    padding: 30px;
+    text-align: center;
+}
+
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .festive-container {
+        padding: 35px 30px 28px;
+        border-radius: 25px;
+    }
+
+    .festive-heading h2 {
+        max-width: 450px;
+        font-size: 36px;
+    }
+
+    .festive-heading p {
+        max-width: 550px;
+        font-size: 14px;
+    }
+
+    .festive-media {
+        gap: 20px;
+    }
+
+    .festive-media-card {
+        width: 240px;
+        border-radius: 20px;
+    }
+
+    .festive-booking {
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .festive-booking-details span {
+        font-size: 11px;
+    }
+
+    .festive-book-button {
+        min-width: 170px;
+        min-height: 48px;
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .festive-section {
+        padding: 10px 20px 40px;
+    }
+
+    .festive-container {
+        padding: 30px 20px 25px;
+        border-radius: 24px;
+    }
+
+    .festive-heading h2 {
+        font-size: 30px;
+    }
+
+    .festive-heading p {
+        font-size: 13px;
+    }
+
+    .festive-media {
+        gap: 15px;
+        margin-bottom: 28px;
+    }
+
+    .festive-media-card {
+        width: calc(50% - 8px);
+        border-radius: 16px;
+    }
+
+    .festive-media-caption {
+        padding: 10px 5px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .festive-media-caption i {
+        font-size: 12px;
+    }
+
+    .festive-play-button {
+        width: 52px;
+        height: 52px;
+    }
+
+    .festive-play-button i {
+        font-size: 18px;
+    }
+
+    .festive-booking {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .festive-booking-content h3 {
+        font-size: 24px;
+    }
+
+    .festive-booking-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .festive-booking-details span {
+        font-size: 12px;
+    }
+
+    .festive-book-button {
+        width: 100%;
+    }
+
+    .festive-instagram {
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .festive-section {
+        padding: 10px 12px 30px;
+    }
+
+    .festive-container {
+        padding: 25px 15px;
+    }
+
+    .festive-heading h2 {
+        font-size: 26px;
+    }
+
+    .festive-media {
+        gap: 10px;
+    }
+
+    .festive-media-caption {
+        font-size: 10px;
+    }
+
+    .festive-booking {
+        padding: 18px;
+    }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .festive-media-card,
+    .festive-image-wrapper img,
+    .festive-play-button,
+    .festive-book-button {
+        transition: none;
+    }
+
+    .festive-media-card:hover,
+    .festive-media-card:hover .festive-image-wrapper img,
+    .festive-book-button:not(:disabled):hover {
+        transform: none;
+    }
+
+    .festive-media-card:hover .festive-play-button {
+        transform: translate(-50%, -50%);
+    }
+
+}

@@ -1,0 +1,361 @@
+/* ==========================================
+   VOICES OF SUPPORT SECTION
+========================================== */
+
+.voices-section {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 45px 7% 65px;
+    background: #f5f4ef;
+    box-sizing: border-box;
+}
+
+.voices-section * {
+    box-sizing: border-box;
+}
+
+.voices-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/about-pattern.svg");
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.45;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.voices-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.voices-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.voices-eyebrow {
+    margin: 0 0 15px;
+    color: #df9c39;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.voices-heading h2 {
+    margin: 0 0 18px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #14213d;
+}
+
+.voices-heading h2 em {
+    color: #e3a63b;
+    font-weight: 400;
+}
+
+.voices-description {
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #667085;
+}
+
+
+/* ==========================================
+   VOICE CARDS GRID
+========================================== */
+
+.voices-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.voice-card {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid rgba(20, 33, 61, 0.06);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(20, 33, 61, 0.10);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.voice-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(20, 33, 61, 0.18);
+}
+
+
+/* ==========================================
+   CARD IMAGE
+========================================== */
+
+.voice-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #10182e;
+}
+
+.voice-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    transition: transform 1s ease-in-out;
+}
+
+
+/* Image zoom only on hover */
+
+.voice-card:hover .voice-image {
+    transform: scale(1.08);
+}
+
+.voice-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.55) 100%
+    );
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   WATCH MESSAGE BUTTON
+========================================== */
+
+.voice-watch-button {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: max-content;
+    max-width: 92%;
+    padding: 10px 20px;
+
+    background: #e3a63b;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(227, 166, 59, 0.35);
+
+    transition: background 0.3s ease;
+}
+
+.voice-watch-button:not(:disabled):hover {
+    background: #c98a24;
+}
+
+.voice-watch-button i {
+    font-size: 11px;
+}
+
+.voice-watch-button:disabled {
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   PERSON DETAILS
+========================================== */
+
+.voice-card-content {
+    padding: 18px 20px 22px;
+}
+
+.voice-card-content h3 {
+    margin: 0 0 6px;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #14213d;
+}
+
+.voice-card-content p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #667085;
+}
+
+
+/* ==========================================
+   INSTAGRAM FOOTER
+========================================== */
+
+.voices-instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin-top: 45px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #667085;
+    text-align: center;
+}
+
+.voices-instagram i {
+    color: #e3a63b;
+    font-size: 17px;
+    margin-right: 3px;
+}
+
+.voices-instagram a {
+    color: #df9c39;
+    text-decoration: none;
+}
+
+.voices-instagram a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .voices-section {
+        padding: 40px 5% 50px;
+    }
+
+    .voices-grid {
+        gap: 15px;
+    }
+
+    .voice-card-content {
+        padding: 15px;
+    }
+
+    .voice-card-content h3 {
+        font-size: 16px;
+    }
+
+    .voice-watch-button {
+        font-size: 10px;
+        padding: 9px 14px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .voices-section {
+        padding: 35px 20px 45px;
+    }
+
+    .voices-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .voices-heading {
+        margin-bottom: 30px;
+    }
+
+    .voices-heading h2 {
+        font-size: 30px;
+    }
+
+    .voices-description {
+        font-size: 13px;
+    }
+
+    .voice-card {
+        border-radius: 18px;
+    }
+
+    .voices-instagram {
+        margin-top: 30px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .voices-grid {
+        gap: 12px;
+    }
+
+    .voice-card-content {
+        padding: 12px;
+    }
+
+    .voice-card-content h3 {
+        font-size: 14px;
+    }
+
+    .voice-watch-button {
+        font-size: 9px;
+        padding: 8px 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .voice-card,
+    .voice-image {
+        transition: none;
+    }
+
+    .voice-card:hover,
+    .voice-card:hover .voice-image {
+        transform: none;
+    }
+}

@@ -1,0 +1,135 @@
+{% load static %}
+
+{% if about %}
+
+<section class="about-section" id="about">
+
+    <!-- Optional Admin Background Image -->
+
+    {% if about.background_image %}
+
+        <img src="{{ about.background_image.url }}"
+             class="about-background-image"
+             alt=""
+             aria-hidden="true">
+
+    {% endif %}
+
+
+    <div class="about-container">
+
+        <!-- LEFT SIDE IMAGE -->
+
+        <div class="about-image-wrapper">
+
+            {% if about.image %}
+
+                <img src="{{ about.image.url }}"
+                     alt="London Indian Tamils Community"
+                     class="about-image">
+
+            {% else %}
+
+                <img src="{% static 'images/about.png' %}"
+                     alt="London Indian Tamils Community"
+                     class="about-image">
+
+            {% endif %}
+
+
+            <!-- Tamil Community Badge -->
+
+            <div class="about-community-badge">
+
+                <h3>{{ about.badge_title }}</h3>
+
+                <p>{{ about.badge_subtitle }}</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE CONTENT -->
+
+        <div class="about-content">
+
+            <div class="about-eyebrow">
+
+                <span></span>
+
+                {{ about.eyebrow }}
+
+            </div>
+
+
+            <h2 class="about-heading">
+
+                {{ about.title }}
+
+                <em>{{ about.highlighted_title }}</em>
+
+            </h2>
+
+
+            <p class="about-description">
+
+                {{ about.description }}
+
+            </p>
+
+
+            <p class="about-description">
+
+                {{ about.secondary_description }}
+
+            </p>
+
+
+            <!-- CONNECT, SUPPORT, CELEBRATE -->
+
+            <div class="about-features">
+
+                {% for feature in about_features %}
+
+                    <div class="about-feature-card">
+
+                        <div class="about-feature-icon">
+
+                            <i class="{{ feature.icon }}"></i>
+
+                        </div>
+
+
+                        <div class="about-feature-content">
+
+                            <div class="about-feature-heading">
+
+                                <span class="about-feature-number">
+
+                                    {{ feature.number }}
+
+                                </span>
+
+                                <h3>{{ feature.title }}</h3>
+
+                            </div>
+
+
+                            <p>{{ feature.description }}</p>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

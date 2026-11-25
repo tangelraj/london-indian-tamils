@@ -1,0 +1,357 @@
+/* ==========================================
+   LIT FOOTER SECTION
+========================================== */
+
+.lit-footer {
+    position: relative;
+    width: 100%;
+
+    padding: 25px 5% 20px;
+
+    background: #142044;
+
+    box-sizing: border-box;
+}
+
+.lit-footer * {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   FOOTER MAIN CONTAINER
+========================================== */
+
+.footer-container {
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 0 auto;
+    padding: 55px 30px 50px;
+
+    background: linear-gradient(
+        180deg,
+        #202c50 0%,
+        #182344 100%
+    );
+
+    border: 1.5px solid rgba(255, 255, 255, 0.13);
+    border-radius: 30px;
+
+    text-align: center;
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   FOOTER TITLE
+========================================== */
+
+.footer-title {
+    margin: 0 0 14px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 500;
+
+    letter-spacing: 5px;
+    line-height: 1.5;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   FOOTER TAGLINE
+========================================== */
+
+.footer-tagline {
+    margin: 0 0 28px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 5px;
+    line-height: 1.7;
+
+    color: #e3a63b;
+}
+
+
+/* ==========================================
+   FOOTER DESCRIPTION
+========================================== */
+
+.footer-description {
+    margin: 0 0 28px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   SOCIAL MEDIA ICONS
+========================================== */
+
+.footer-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+.footer-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1.5px solid #e3a63b;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #e3a63b;
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.footer-social-icon i {
+    font-size: 15px;
+}
+
+
+/* Social icon hover animation */
+
+a.footer-social-icon:hover {
+    background: #e3a63b;
+    color: #142044;
+
+    transform: translateY(-4px) scale(1.08);
+}
+
+
+/* ==========================================
+   FOOTER POLICY LINKS
+========================================== */
+
+.footer-policy-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 22px;
+
+    margin-bottom: 16px;
+}
+
+.footer-policy-links a,
+.footer-policy-links span {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-policy-links a:hover {
+    color: #e3a63b;
+}
+
+
+/* ==========================================
+   COPYRIGHT
+========================================== */
+
+.footer-copyright {
+    margin: 0 0 8px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ==========================================
+   DEVELOPER CREDIT
+========================================== */
+
+.footer-developer {
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-developer a {
+    color: inherit;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-developer a:hover {
+    color: #e3a63b;
+}
+
+.lit-footer a:focus-visible {
+    outline: 2px solid #e3a63b;
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+    .lit-footer {
+        padding: 25px 4%;
+    }
+
+    .footer-container {
+        padding: 45px 25px;
+    }
+
+    .footer-title {
+        font-size: 30px;
+        letter-spacing: 4px;
+    }
+
+    .footer-description {
+        font-size: 17px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .lit-footer {
+        padding: 20px 15px;
+    }
+
+    .footer-container {
+        padding: 35px 20px;
+        border-radius: 22px;
+    }
+
+    .footer-title {
+        font-size: 23px;
+        letter-spacing: 3px;
+        line-height: 1.5;
+    }
+
+    .footer-tagline {
+        font-size: 10px;
+        letter-spacing: 3px;
+
+        margin-bottom: 22px;
+    }
+
+    .footer-description {
+        font-size: 16px;
+        line-height: 1.8;
+
+        margin-bottom: 24px;
+    }
+
+    .footer-social-links {
+        margin-bottom: 24px;
+    }
+
+    .footer-policy-links {
+        gap: 14px;
+    }
+
+    .footer-policy-links a,
+    .footer-policy-links span {
+        font-size: 11px;
+    }
+
+    .footer-copyright,
+    .footer-developer {
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .footer-title {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .footer-tagline {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .footer-description {
+        font-size: 14px;
+    }
+
+    .footer-policy-links {
+        gap: 10px;
+    }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-social-icon {
+        transition: none;
+    }
+
+    a.footer-social-icon:hover {
+        transform: none;
+    }
+
+}

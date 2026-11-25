@@ -1,0 +1,337 @@
+/* ==========================================
+   SOCIAL MEDIA SECTION
+========================================== */
+
+.social-section {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 50px 5% 70px;
+
+    background: #f5f4ef;
+    box-sizing: border-box;
+}
+
+.social-section * {
+    box-sizing: border-box;
+}
+
+.social-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../images/about-pattern.svg");
+    background-repeat: repeat;
+    background-size: 250px 250px;
+
+    opacity: 0.45;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   SOCIAL CONTAINER
+========================================== */
+
+.social-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    align-items: center;
+    gap: 65px;
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   LEFT SIDE CONTENT
+========================================== */
+
+.social-eyebrow {
+    margin: 0 0 20px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 5px;
+
+    color: #df9634;
+}
+
+.social-heading {
+    margin: 0 0 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(36px, 4.5vw, 64px);
+    font-weight: 500;
+    line-height: 1.25;
+
+    color: #14213d;
+}
+
+.social-heading em {
+    display: block;
+
+    color: #e3a63b;
+    font-weight: 400;
+}
+
+.social-description {
+    max-width: 570px;
+
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    color: #536078;
+}
+
+
+/* ==========================================
+   SOCIAL MEDIA CARDS
+========================================== */
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    width: 100%;
+    min-height: 120px;
+
+    padding: 25px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(20, 33, 61, 0.04);
+    border-radius: 28px;
+
+    color: #14213d;
+    text-decoration: none;
+
+    box-shadow: 0 15px 40px rgba(20, 33, 61, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+a.social-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 20px 45px rgba(20, 33, 61, 0.15);
+}
+
+
+/* ==========================================
+   SOCIAL ICON
+========================================== */
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 72px;
+    height: 72px;
+
+    background: linear-gradient(
+        135deg,
+        #efb84b,
+        #d99b30
+    );
+
+    border-radius: 22px;
+
+    color: #ffffff;
+
+    box-shadow: 0 10px 25px rgba(227, 166, 59, 0.30);
+
+    transition: transform 0.35s ease;
+}
+
+.social-icon i {
+    font-size: 30px;
+}
+
+a.social-card:hover .social-icon {
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   SOCIAL CARD CONTENT
+========================================== */
+
+.social-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.social-platform {
+    margin: 0 0 7px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+
+    color: #df9634;
+}
+
+.social-display-name {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(19px, 2.2vw, 30px);
+    font-weight: 500;
+    line-height: 1.4;
+
+    color: #14213d;
+
+    overflow-wrap: anywhere;
+}
+
+.social-arrow {
+    flex-shrink: 0;
+
+    color: #14213d;
+    font-size: 21px;
+
+    transition: transform 0.35s ease;
+}
+
+a.social-card:hover .social-arrow {
+    transform: translateX(6px);
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+    .social-container {
+        gap: 35px;
+    }
+
+    .social-heading {
+        font-size: 44px;
+    }
+
+    .social-description {
+        font-size: 15px;
+    }
+
+    .social-card {
+        padding: 20px;
+        gap: 18px;
+        min-height: 100px;
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+    }
+
+    .social-icon i {
+        font-size: 25px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .social-section {
+        padding: 35px 20px 40px;
+    }
+
+    .social-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .social-heading {
+        font-size: 38px;
+        margin-bottom: 18px;
+    }
+
+    .social-eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .social-description {
+        font-size: 14px;
+    }
+
+    .social-card {
+        padding: 18px;
+        min-height: 90px;
+        border-radius: 22px;
+    }
+
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 16px;
+    }
+
+    .social-display-name {
+        font-size: 20px;
+    }
+
+    .social-platform {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .social-arrow {
+        font-size: 17px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-card,
+    .social-icon,
+    .social-arrow {
+        transition: none;
+    }
+
+    a.social-card:hover,
+    a.social-card:hover .social-icon,
+    a.social-card:hover .social-arrow {
+        transform: none;
+    }
+
+}

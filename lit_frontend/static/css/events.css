@@ -1,0 +1,702 @@
+/* ==========================================
+   EVENTS SECTION
+========================================== */
+
+.events-section {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 45px 5.5% 65px;
+    box-sizing: border-box;
+    background-color: #f5f4ef;
+    overflow: hidden;
+}
+
+.events-section *,
+.events-section *::before,
+.events-section *::after {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   PATTERN BACKGROUND
+========================================== */
+
+.events-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/about-pattern.svg");
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.45;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.events-section-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.events-container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.events-heading-wrapper {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.events-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: #db913b;
+    margin: 0 0 20px;
+}
+
+.events-heading {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 3.8vw, 56px);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #10182e;
+    margin: 0 0 25px;
+}
+
+.events-heading em {
+    font-style: italic;
+    font-weight: 400;
+    color: #e3a63b;
+}
+
+.events-description {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #647084;
+    margin: 0 0 24px;
+}
+
+.events-categories {
+    max-width: 850px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.6px;
+    color: #dc923c;
+}
+
+
+/* ==========================================
+   EVENT LIST
+========================================== */
+
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* ==========================================
+   FEATURED EVENT BANNER
+========================================== */
+
+.event-card {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 24px;
+
+    width: 100%;
+    min-height: 540px;
+    padding: 4%;
+
+    background-color: #10182e;
+
+    border: 1px solid rgba(227, 166, 59, 0.5);
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    box-shadow: 0 18px 45px rgba(16, 24, 46, 0.12);
+}
+
+
+/* ==========================================
+   ANIMATED BACKGROUND IMAGE
+========================================== */
+
+.event-background {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+.event-background-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1);
+    transform-origin: center center;
+
+    transition: transform 1.5s ease-in-out;
+}
+
+/* Zoom image on hover */
+
+.event-card:hover .event-background-image {
+    transform: scale(1.08);
+}
+
+/* ==========================================
+   ZOOM ANIMATION
+========================================== */
+
+@keyframes eventBackgroundZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.event-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(9, 13, 32, 0.65) 0%,
+        rgba(9, 13, 32, 0.30) 55%,
+        rgba(9, 13, 32, 0.15) 100%
+    );
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   LEFT SIDE CONTENT
+========================================== */
+
+.event-content {
+    position: relative;
+    align-self: start;
+    min-width: 0;
+    z-index: 1;
+    color: #ffffff;
+}
+
+
+/* Featured Event Badge */
+
+.event-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 18px;
+
+    border: 1px solid #e3a63b;
+    border-radius: 50px;
+
+    background-color: rgba(16, 24, 46, 0.3);
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    color: #e3a63b;
+
+    margin-bottom: 30px;
+}
+
+
+/* Main Event Title */
+
+.event-title {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5vw, 84px);
+    font-weight: 600;
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+
+    color: #ffffff;
+
+    margin: 0;
+
+    overflow-wrap: break-word;
+}
+
+.event-title span {
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* Event Year */
+
+.event-year {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 4.5vw, 68px);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.2;
+
+    color: #e3a63b;
+
+    margin: 25px 0 0;
+}
+
+
+/* ==========================================
+   BOTTOM RIGHT INFORMATION BOX
+========================================== */
+
+.event-info {
+    position: relative;
+    align-self: end;
+    z-index: 2;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 28px 32px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(24, 24, 40, 0.96),
+        rgba(36, 27, 39, 0.96)
+    );
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   INFORMATION ROWS
+========================================== */
+
+.event-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.event-info-row > i {
+    flex-shrink: 0;
+
+    width: 20px;
+
+    margin-top: 3px;
+
+    font-size: 17px;
+    text-align: center;
+
+    color: #e3a63b;
+}
+
+.event-info-row p {
+    flex: 1;
+    min-width: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: #ffffff;
+
+    margin: 0;
+}
+
+.event-info-row strong {
+    font-weight: 700;
+}
+
+.event-info-row small {
+    font-size: 11px;
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   BOOK NOW BUTTON
+========================================== */
+
+.event-book-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    width: 100%;
+    min-height: 54px;
+
+    padding: 15px 20px;
+    margin-top: 30px;
+
+    background-color: #e3a63b;
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.event-book-button:not(:disabled):hover {
+    background-color: #cb902e;
+    transform: translateY(-3px);
+}
+
+.event-book-button i {
+    font-size: 13px;
+    transition: transform 0.3s ease;
+}
+
+.event-book-button:not(:disabled):hover i {
+    transform: translateX(5px);
+}
+
+.event-book-button:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+
+/* ==========================================
+   RESPONSIVE - LAPTOP
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .event-card {
+        min-height: 460px;
+        padding: 4%;
+        border-radius: 28px;
+    }
+
+    .event-title {
+        font-size: clamp(38px, 5.2vw, 65px);
+    }
+
+    .event-info {
+        padding: 24px;
+    }
+
+    .event-info-row p {
+        font-size: 13px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .events-section {
+        padding: 30px 5.5% 50px;
+    }
+
+    .events-heading-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .events-eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+    }
+
+    .events-heading {
+        font-size: 36px;
+        margin-bottom: 18px;
+    }
+
+    .events-description {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .events-categories {
+        max-width: 650px;
+        font-size: 11px;
+    }
+
+    .event-card {
+        min-height: 380px;
+        padding: 4%;
+        gap: 15px;
+        border-radius: 24px;
+    }
+
+    .event-title {
+        font-size: clamp(34px, 5.5vw, 54px);
+    }
+
+    .event-badge {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 22px;
+    }
+
+    .event-year {
+        font-size: 44px;
+        margin-top: 18px;
+    }
+
+    .event-info {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .event-info-row {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .event-info-row > i {
+        font-size: 14px;
+        width: 16px;
+    }
+
+    .event-info-row p {
+        font-size: 11px;
+    }
+
+    .event-info-row small {
+        font-size: 9px;
+    }
+
+    .event-book-button {
+        min-height: 42px;
+        font-size: 11px;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .events-section {
+        padding: 35px 20px 50px;
+    }
+
+    .events-heading {
+        font-size: 34px;
+    }
+
+    .events-description {
+        font-size: 14px;
+    }
+
+    .events-categories {
+        font-size: 12px;
+    }
+
+    .event-card {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding: 28px;
+        gap: 35px;
+
+        border-radius: 24px;
+    }
+
+    .event-title {
+        font-size: clamp(34px, 7vw, 48px);
+    }
+
+    .event-year {
+        font-size: 42px;
+    }
+
+    .event-info {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .event-info-row p {
+        font-size: 13px;
+    }
+
+    .event-info-row small {
+        font-size: 10px;
+    }
+
+    .event-book-button {
+        font-size: 13px;
+        min-height: 48px;
+    }
+
+    .event-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(9, 13, 32, 0.4),
+            rgba(9, 13, 32, 0.8)
+        );
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .events-section {
+        padding: 30px 15px 40px;
+    }
+
+    .events-heading {
+        font-size: 29px;
+    }
+
+    .event-card {
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .event-title {
+        font-size: 34px;
+    }
+
+    .event-year {
+        font-size: 36px;
+    }
+
+    .event-info {
+        padding: 16px;
+    }
+
+    .event-info-row p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .event-background-image {
+        animation: none;
+        transform: none;
+        will-change: auto;
+    }
+
+    .event-book-button,
+    .event-book-button i {
+        transition: none;
+    }
+
+    .event-book-button:not(:disabled):hover,
+    .event-book-button:not(:disabled):hover i {
+        transform: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .event-background-image {
+        transition: none;
+    }
+
+    .event-card:hover .event-background-image {
+        transform: none;
+    }
+}

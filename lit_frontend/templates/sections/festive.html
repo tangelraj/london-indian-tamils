@@ -1,0 +1,297 @@
+{% load static %}
+
+{% if festive %}
+
+<section class="festive-section" id="festive">
+
+    <div class="festive-container">
+
+        <!-- Section Heading -->
+
+        <div class="festive-heading">
+
+            <h2>{{ festive.title }}</h2>
+
+            <p>{{ festive.description }}</p>
+
+        </div>
+
+
+        <!-- Flyer and Video Cards -->
+
+        <div class="festive-media">
+
+
+            <!-- Flyer Card -->
+
+            <button type="button"
+                    class="festive-media-card"
+                    data-festive-open="festiveFlyerDialog">
+
+                <div class="festive-image-wrapper">
+
+                    {% if festive.flyer_image %}
+
+                        <img src="{{ festive.flyer_image.url }}"
+                             alt="Christmas Market event flyer">
+
+                    {% else %}
+
+                        <img src="{% static 'images/christmas-flyer.jpg' %}"
+                             alt="Christmas Market event flyer">
+
+                    {% endif %}
+
+                </div>
+
+                <div class="festive-media-caption">
+
+                    <i class="fa-regular fa-image"></i>
+
+                    {{ festive.flyer_button_text }}
+
+                </div>
+
+            </button>
+
+
+            <!-- Video Card -->
+
+            <button type="button"
+                    class="festive-media-card"
+                    data-festive-open="festiveVideoDialog">
+
+                <div class="festive-image-wrapper">
+
+                    {% if festive.video_thumbnail %}
+
+                        <img src="{{ festive.video_thumbnail.url }}"
+                             alt="Christmas Market video thumbnail">
+
+                    {% elif festive.flyer_image %}
+
+                        <img src="{{ festive.flyer_image.url }}"
+                             alt="Christmas Market video thumbnail">
+
+                    {% else %}
+
+                        <img src="{% static 'images/christmas-flyer.jpg' %}"
+                             alt="Christmas Market video thumbnail">
+
+                    {% endif %}
+
+
+                    <!-- Play Button -->
+
+                    <span class="festive-play-button">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </span>
+
+                </div>
+
+                <div class="festive-media-caption">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    {{ festive.video_button_text }}
+
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <!-- Booking Information -->
+
+        <div class="festive-booking">
+
+            <div class="festive-booking-content">
+
+                <h3>{{ festive.booking_title }}</h3>
+
+                <div class="festive-booking-details">
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        {{ festive.event_date|date:"l d F Y" }}
+
+                    </span>
+
+                    <span>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        {{ festive.pickup_details }}
+
+                    </span>
+
+                    <span>
+
+                        <i class="fa-solid fa-ticket"></i>
+
+                        {{ festive.price }}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Book Now Button -->
+
+            {% if festive.button_link %}
+
+                <a href="{{ festive.button_link }}"
+                   class="festive-book-button"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ festive.button_text }}
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            {% else %}
+
+                <button type="button"
+                        class="festive-book-button"
+                        disabled>
+
+                    {{ festive.button_text }}
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Instagram Link -->
+
+        <div class="festive-instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <span>{{ festive.instagram_text }}</span>
+
+            {% if festive.instagram_link %}
+
+                <a href="{{ festive.instagram_link }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ festive.instagram_username }}
+
+                </a>
+
+            {% else %}
+
+                <span>{{ festive.instagram_username }}</span>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- FULL FLYER POPUP -->
+
+    <dialog class="festive-dialog"
+            id="festiveFlyerDialog"
+            aria-label="Full event flyer">
+
+        <button type="button"
+                class="festive-close"
+                data-festive-close
+                aria-label="Close flyer">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        {% if festive.flyer_image %}
+
+            <img src="{{ festive.flyer_image.url }}"
+                 class="festive-full-flyer"
+                 alt="Full Christmas Market flyer">
+
+        {% else %}
+
+            <img src="{% static 'images/christmas-flyer.png' %}"
+                 class="festive-full-flyer"
+                 alt="Full Christmas Market flyer">
+
+        {% endif %}
+
+    </dialog>
+
+
+    <!-- VIDEO POPUP -->
+
+    <dialog class="festive-dialog festive-video-dialog"
+            id="festiveVideoDialog"
+            aria-label="Event video">
+
+        <button type="button"
+                class="festive-close"
+                data-festive-close
+                aria-label="Close video">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        {% if festive.video_file %}
+
+            <video controls playsinline
+                   class="festive-video"
+                   preload="metadata">
+
+                <source src="{{ festive.video_file.url }}">
+
+                Your browser does not support video playback.
+
+            </video>
+
+        {% elif festive.video_url %}
+
+            <div class="festive-external-video">
+
+                <a href="{{ festive.video_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="festive-book-button">
+
+                    Watch the video
+
+                    <i class="fa-solid fa-play"></i>
+
+                </a>
+
+            </div>
+
+        {% else %}
+
+            <p class="festive-video-message">
+
+                Event video coming soon.
+
+            </p>
+
+        {% endif %}
+
+    </dialog>
+
+</section>
+
+{% endif %}

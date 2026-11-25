@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Membership Submitted - LIT</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/membership.css' %}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <main class="membership-container">
+
+        <div class="membership-success-card">
+
+            <div class="success-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <h1>Thank You for Joining LIT!</h1>
+
+            <p>
+                Your membership application has been
+                submitted successfully.
+            </p>
+
+            <p>
+                The London Indian Tamils team will review
+                your application.
+            </p>
+
+            <p>
+                CONNECT • SUPPORT • CELEBRATE
+            </p>
+
+            <a href="{% url 'home' %}"
+               class="membership-back-button">
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

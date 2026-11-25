@@ -1,0 +1,103 @@
+{% load static %}
+
+{% if social_section %}
+
+<section class="social-section" id="social">
+
+    <div class="social-container">
+
+        <!-- Left Side Content -->
+
+        <div class="social-content">
+
+            <p class="social-eyebrow">
+                {{ social_section.eyebrow }}
+            </p>
+
+            <h2 class="social-heading">
+
+                {{ social_section.title }}
+
+                <em>
+                    {{ social_section.highlighted_title }}
+                </em>
+
+            </h2>
+
+            <p class="social-description">
+                {{ social_section.description }}
+            </p>
+
+        </div>
+
+
+        <!-- Right Side Social Media Cards -->
+
+        <div class="social-links">
+
+            {% for social in social_links %}
+
+                {% if social.url %}
+
+                <a href="{{ social.url }}"
+                   class="social-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                {% else %}
+
+                <div class="social-card">
+
+                {% endif %}
+
+                    <!-- Social Icon -->
+
+                    <div class="social-icon">
+
+                        <i class="{{ social.icon }}"></i>
+
+                    </div>
+
+
+                    <!-- Social Details -->
+
+                    <div class="social-card-content">
+
+                        <p class="social-platform">
+                            {{ social.platform }}
+                        </p>
+
+                        <h3 class="social-display-name">
+                            {{ social.display_name }}
+                        </h3>
+
+                    </div>
+
+
+                    <!-- Arrow -->
+
+                    <span class="social-arrow">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                {% if social.url %}
+
+                </a>
+
+                {% else %}
+
+                </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

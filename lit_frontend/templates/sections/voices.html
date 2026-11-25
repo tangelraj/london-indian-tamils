@@ -1,0 +1,159 @@
+{% load static %}
+
+{% if voices_section %}
+
+<section class="voices-section" id="voices">
+
+    <div class="voices-container">
+
+        <!-- Section Heading -->
+
+        <div class="voices-heading">
+
+            <p class="voices-eyebrow">
+                {{ voices_section.eyebrow }}
+            </p>
+
+            <h2>
+                {{ voices_section.title }}
+                <em>
+                    {{ voices_section.highlighted_title }}
+                </em>
+            </h2>
+
+            <p class="voices-description">
+                {{ voices_section.description }}
+            </p>
+
+        </div>
+
+        <!-- Voice Message Cards -->
+
+        <div class="voices-grid">
+
+            {% for voice in voice_messages %}
+
+            <article class="voice-card">
+
+                <div class="voice-image-wrapper">
+
+                    {% if voice.image %}
+
+                        <img src="{{ voice.image.url }}"
+                             alt="{{ voice.name }}"
+                             class="voice-image">
+
+                    {% elif voice.order == 1 %}
+
+                        <img src="{% static 'images/srinivas.jpeg' %}"
+                             alt="{{ voice.name }}"
+                             class="voice-image">
+
+                    {% elif voice.order == 2 %}
+
+                        <img src="{% static 'images/unni-krishnan.jpeg' %}"
+                             alt="{{ voice.name }}"
+                             class="voice-image">
+
+                    {% elif voice.order == 3 %}
+
+                        <img src="{% static 'images/gopinath.jpeg' %}"
+                             alt="{{ voice.name }}"
+                             class="voice-image">
+
+                    {% elif voice.order == 4 %}
+
+                        <img src="{% static 'images/dushyanth-sridhar.jpg' %}"
+                             alt="{{ voice.name }}"
+                             class="voice-image">
+
+                    {% endif %}
+
+                    <div class="voice-image-overlay"></div>
+
+                    <!-- Watch Message Button -->
+
+                    {% if voice.video_url %}
+
+                        <a href="{{ voice.video_url }}"
+                           class="voice-watch-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            <i class="fa-solid fa-play"></i>
+
+                            {{ voice.button_text }}
+
+                        </a>
+
+                    {% else %}
+
+                        <button type="button"
+                                class="voice-watch-button"
+                                disabled>
+
+                            <i class="fa-solid fa-play"></i>
+
+                            {{ voice.button_text }}
+
+                        </button>
+
+                    {% endif %}
+
+                </div>
+
+                <!-- Person Details -->
+
+                <div class="voice-card-content">
+
+                    <h3>{{ voice.name }}</h3>
+
+                    <p>{{ voice.designation }}</p>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Instagram Footer -->
+
+        <div class="voices-instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <span>
+                {{ voices_section.instagram_text }}
+            </span>
+
+            {% if voices_section.instagram_url %}
+
+                <a href="{{ voices_section.instagram_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ voices_section.instagram_username }}
+
+                </a>
+
+            {% else %}
+
+                <span>
+                    {{ voices_section.instagram_username }}
+                </span>
+
+            {% endif %}
+
+            <span>
+                {{ voices_section.instagram_description }}
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

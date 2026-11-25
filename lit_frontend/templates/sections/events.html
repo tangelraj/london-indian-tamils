@@ -1,0 +1,191 @@
+{% load static %}
+
+{% if events_section %}
+
+<section class="events-section" id="events">
+
+    {% if events_section.background_image %}
+
+        <img src="{{ events_section.background_image.url }}"
+             class="events-section-background"
+             alt="">
+
+    {% endif %}
+
+    <div class="events-container">
+
+        <!-- Section Heading -->
+
+        <div class="events-heading-wrapper">
+
+            <p class="events-eyebrow">
+                {{ events_section.eyebrow }}
+            </p>
+
+            <h2 class="events-heading">
+                {{ events_section.title }}
+                <em>{{ events_section.highlighted_title }}</em>
+            </h2>
+
+            <p class="events-description">
+                {{ events_section.description }}
+            </p>
+
+            <p class="events-categories">
+                {{ events_section.categories }}
+            </p>
+
+        </div>
+
+
+        <!-- Event Cards -->
+
+        <div class="events-list">
+
+            {% for event in events %}
+
+            <article class="event-card">
+
+                <!-- Background Image -->
+
+                <div class="event-background">
+
+                    {% if event.image %}
+
+                        <img src="{{ event.image.url }}"
+                             class="event-background-image"
+                             alt="">
+
+                    {% else %}
+
+                        <img src="{% static 'images/bath-christmas.jpg' %}"
+                             class="event-background-image"
+                             alt="">
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Dark Overlay -->
+
+                <div class="event-overlay"></div>
+
+
+                <!-- Left Side Content -->
+
+                <div class="event-content">
+
+                    <span class="event-badge">
+                        {{ event.badge_text }}
+                    </span>
+
+                    <h3 class="event-title">
+                        {{ event.title }}
+                        <span>{{ event.subtitle }}</span>
+                    </h3>
+
+                    <p class="event-year">
+                        {{ event.year }}
+                    </p>
+
+                </div>
+
+
+                <!-- Bottom Right Information Box -->
+
+                <div class="event-info">
+
+                    <!-- Event Date -->
+
+                    <div class="event-info-row">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <p>
+                            {{ event.event_date|date:"l d F Y" }}
+                        </p>
+
+                    </div>
+
+
+                    <!-- Pickup Location -->
+
+                    {% if event.pickup_details %}
+
+                        <div class="event-info-row">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <p>
+                                {{ event.pickup_details }}
+                            </p>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <!-- Ticket Price -->
+
+                    <div class="event-info-row">
+
+                        <i class="fa-solid fa-ticket"></i>
+
+                        <p>
+
+                            <strong>
+                                {{ event.price }}
+                            </strong>
+
+                            <small>
+                                {{ event.price_note }}
+                            </small>
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- BOOK NOW BUTTON -->
+
+                    {% if event.button_link %}
+
+                        <a href="{{ event.button_link }}"
+                           class="event-book-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            {{ event.button_text }}
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    {% else %}
+
+                        <button type="button"
+                                class="event-book-button"
+                                disabled>
+
+                            {{ event.button_text }}
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    {% endif %}
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

@@ -1,0 +1,184 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Join London Indian Tamils</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/membership.css' %}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
+
+</head>
+
+<body>
+
+    <main class="membership-container">
+
+        <!-- LIT Logo Banner -->
+
+        <div class="membership-banner">
+
+            {% if website.logo %}
+
+                <img src="{{ website.logo.url }}"
+                     alt="London Indian Tamils">
+
+            {% else %}
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="London Indian Tamils">
+
+            {% endif %}
+
+        </div>
+
+        <!-- Form Heading -->
+
+        <div class="membership-heading">
+
+            <h1>Contact information</h1>
+
+            <p>🇬🇧🇮🇳 Join the LIT WhatsApp Community</p>
+
+            <div class="membership-required">
+
+                * Indicates required question
+
+            </div>
+
+        </div>
+
+        <!-- Registration Form -->
+
+        <form method="POST" id="membership-form">
+
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+
+                <div class="form-errors">
+                    {{ form.non_field_errors }}
+                </div>
+
+            {% endif %}
+
+            {% for field in form %}
+
+                <div class="membership-field-card">
+
+                    <label for="{{ field.id_for_label }}">
+
+                        {{ field.label }}
+
+                        <span class="required-star">*</span>
+
+                    </label>
+
+                    {{ field }}
+
+                    {% for error in field.errors %}
+
+                        <p class="field-error">
+                            {{ error }}
+                        </p>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+            <!-- Privacy Information -->
+
+            <p class="membership-privacy">
+
+                Your contact information will be used
+                to process your LIT community membership
+                request.
+
+            </p>
+
+            <!-- Form Buttons -->
+
+            <div class="membership-actions">
+
+                <button type="submit"
+                        class="membership-submit">
+
+                    Submit
+
+                </button>
+
+                <button type="button"
+                        class="membership-clear"
+                        id="clear-form">
+
+                    Clear form
+
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- Footer -->
+
+        <div class="membership-footer">
+
+            <p>
+                Never submit passwords through this form.
+            </p>
+
+            <a href="{% url 'home' %}#join">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to London Indian Tamils
+
+            </a>
+
+            <h3>London Indian Tamils (LIT)</h3>
+
+            <p>CONNECT • SUPPORT • CELEBRATE</p>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        document.getElementById("clear-form")
+            .addEventListener("click", function () {
+
+                if (confirm("Clear all your answers?")) {
+
+                    document.querySelectorAll(
+                        "#membership-form input:not([type='hidden'])"
+                    ).forEach(function (input) {
+
+                        input.value = "";
+
+                    });
+
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>

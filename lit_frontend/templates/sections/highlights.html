@@ -1,0 +1,201 @@
+{% load static %}
+
+{% if event_highlights %}
+
+<section class="highlights-section" id="highlights">
+
+    {% for highlight in event_highlights %}
+
+    <article class="highlights-container">
+
+        <!-- Section Heading -->
+
+        <div class="highlights-heading">
+
+            <h2>{{ highlight.title }}</h2>
+
+            <p>{{ highlight.description }}</p>
+
+        </div>
+
+
+        <!-- Video Thumbnail Card -->
+
+        <div class="highlights-video-wrapper">
+
+            {% if highlight.video_url %}
+
+            <a href="{{ highlight.video_url }}"
+               class="highlights-video-card"
+               target="_blank"
+               rel="noopener noreferrer">
+
+            {% else %}
+
+            <div class="highlights-video-card">
+
+            {% endif %}
+
+
+                <!-- Thumbnail Image -->
+
+                <div class="highlights-thumbnail">
+
+                    {% if highlight.thumbnail %}
+
+                        <img src="{{ highlight.thumbnail.url }}"
+                             alt="{{ highlight.title }}">
+
+                    {% else %}
+
+                        <img src="{% static 'images/deepavali-highlights.jpeg' %}"
+                             alt="{{ highlight.title }}">
+
+                    {% endif %}
+
+
+                    <!-- Image Overlay -->
+
+                    <div class="highlights-video-overlay"></div>
+
+
+                    <!-- Play Button -->
+
+                    <span class="highlights-play-button">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </span>
+
+                </div>
+
+
+                <!-- Video Caption -->
+
+                <div class="highlights-video-caption">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    <span>
+                        {{ highlight.video_button_text }}
+                    </span>
+
+                </div>
+
+
+            {% if highlight.video_url %}
+
+            </a>
+
+            {% else %}
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Gallery Information Box -->
+
+        <div class="highlights-gallery">
+
+            <div class="highlights-gallery-content">
+
+                <h3>{{ highlight.gallery_title }}</h3>
+
+                <div class="highlights-event-details">
+
+                    <!-- Event Date -->
+
+                    <span>
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        {{ highlight.event_date|date:"l d F Y" }}
+
+                    </span>
+
+
+                    <!-- Event Location -->
+
+                    <span>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        {{ highlight.location }}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Photo Gallery Button -->
+
+            {% if highlight.gallery_url %}
+
+                <a href="{{ highlight.gallery_url }}"
+                   class="highlights-gallery-button"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ highlight.gallery_button_text }}
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            {% else %}
+
+                <button type="button"
+                        class="highlights-gallery-button"
+                        disabled>
+
+                    {{ highlight.gallery_button_text }}
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Instagram Footer -->
+
+        <div class="highlights-instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            <span>{{ highlight.instagram_text }}</span>
+
+            {% if highlight.instagram_url %}
+
+                <a href="{{ highlight.instagram_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ highlight.instagram_username }}
+
+                </a>
+
+            {% else %}
+
+                <span>
+                    {{ highlight.instagram_username }}
+                </span>
+
+            {% endif %}
+
+        </div>
+
+    </article>
+
+    {% endfor %}
+
+</section>
+
+{% endif %}

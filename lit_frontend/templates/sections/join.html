@@ -1,0 +1,84 @@
+{% load static %}
+
+{% if join_section %}
+
+<section class="join-section" id="join">
+
+    <div class="join-container">
+
+        <!-- Background Image -->
+
+        <div class="join-background">
+
+            {% if join_section.background_image %}
+
+                <img src="{{ join_section.background_image.url }}"
+                     alt="">
+
+            {% else %}
+
+                <img src="{% static 'images/join-community.png' %}"
+                     alt="">
+
+            {% endif %}
+
+        </div>
+
+        <!-- Navy and Maroon Overlay -->
+
+        <div class="join-overlay"></div>
+
+        <!-- Main Content -->
+
+        <div class="join-content">
+
+            <h2>
+                {{ join_section.title }}
+
+                <em>
+                    {{ join_section.highlighted_title }}
+                </em>
+            </h2>
+
+            <p class="join-description">
+                {{ join_section.description }}
+            </p>
+
+            <p class="join-sub-description">
+                {{ join_section.sub_description }}
+            </p>
+
+            <!-- Community Benefits -->
+
+            <div class="join-benefits">
+
+                {% for benefit in join_benefits %}
+
+                    <span class="join-benefit">
+                        {{ benefit.title }}
+                    </span>
+
+                {% endfor %}
+
+            </div>
+
+            <!-- Join Now Button -->
+
+            {% url 'join_membership' as membership_url %}
+
+            <a href="{{ join_section.button_link|default:membership_url }}"
+               class="join-now-button">
+
+                {{ join_section.button_text|default:"JOIN NOW" }}
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

@@ -1,0 +1,129 @@
+{% load static %}
+
+{% if past_events %}
+
+<section class="past-events-section" id="past-events">
+
+    {% for event in past_events %}
+
+    <article class="past-event-container">
+
+        <!-- Event Heading -->
+
+        <div class="past-event-heading">
+
+            <h2>
+                {{ event.title }}
+            </h2>
+
+            <p class="past-event-date">
+
+                {{ event.event_date|date:"d F Y" }}
+
+                |
+
+                {{ event.location }}
+
+            </p>
+
+        </div>
+
+
+        <!-- Event Description -->
+
+        <div class="past-event-content">
+
+            <p class="past-event-introduction">
+
+                {{ event.introduction }}
+
+            </p>
+
+            <div class="past-event-description">
+
+                {{ event.description|linebreaks }}
+
+            </div>
+
+            {% if event.quote %}
+
+                <p class="past-event-quote">
+
+                    {{ event.quote }}
+
+                </p>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Photo Gallery Box -->
+
+        <div class="past-event-gallery">
+
+            <div class="past-gallery-content">
+
+                <h3>
+                    {{ event.gallery_title }}
+                </h3>
+
+                <p class="past-gallery-description">
+
+                    {{ event.gallery_description }}
+
+                </p>
+
+                <div class="past-gallery-brand">
+
+                    <p>
+                        {{ event.organisation_name }}
+                    </p>
+
+                    <p>
+                        {{ event.tagline }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Photo Gallery Button -->
+
+            {% if event.button_link %}
+
+                <a href="{{ event.button_link }}"
+                   class="past-gallery-button"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ event.button_text }}
+
+                    <i class="fa-regular fa-images"></i>
+
+                </a>
+
+            {% else %}
+
+                <button type="button"
+                        class="past-gallery-button"
+                        disabled>
+
+                    {{ event.button_text }}
+
+                    <i class="fa-regular fa-images"></i>
+
+                </button>
+
+            {% endif %}
+
+        </div>
+
+    </article>
+
+    {% endfor %}
+
+</section>
+
+{% endif %}

@@ -1,0 +1,128 @@
+{% load static %}
+
+{% if footer_section %}
+
+<footer class="lit-footer" id="footer">
+
+    <div class="footer-container">
+
+        <!-- Footer Heading -->
+
+        <h2 class="footer-title">
+            {{ footer_section.title }}
+        </h2>
+
+
+        <!-- Footer Tagline -->
+
+        <p class="footer-tagline">
+            {{ footer_section.tagline }}
+        </p>
+
+
+        <!-- Footer Description -->
+
+        <p class="footer-description">
+            {{ footer_section.description }}
+        </p>
+
+
+        <!-- Social Media Icons -->
+
+        <div class="footer-social-links">
+
+            {% for social in footer_social_links %}
+
+                {% if social.url %}
+
+                    <a href="{{ social.url }}"
+                       class="footer-social-icon"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       title="{{ social.name }}"
+                       aria-label="{{ social.name }}">
+
+                        <i class="{{ social.icon }}"></i>
+
+                    </a>
+
+                {% else %}
+
+                    <span class="footer-social-icon"
+                          title="{{ social.name }}"
+                          aria-label="{{ social.name }}">
+
+                        <i class="{{ social.icon }}"></i>
+
+                    </span>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Policy Links -->
+
+        <div class="footer-policy-links">
+
+            {% for policy in footer_policy_links %}
+
+                {% if policy.link %}
+
+                    <a href="{{ policy.link }}">
+                        {{ policy.title }}
+                    </a>
+
+                {% else %}
+
+                    <span>
+                        {{ policy.title }}
+                    </span>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Copyright -->
+
+        <p class="footer-copyright">
+            {{ footer_section.copyright_text }}
+        </p>
+
+
+        <!-- Developer Credits -->
+
+        <p class="footer-developer">
+
+            {{ footer_section.developer_text }}
+
+            {% if footer_section.developer_url %}
+
+                <a href="{{ footer_section.developer_url }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    {{ footer_section.developer_name }}
+
+                </a>
+
+            {% else %}
+
+                <span>
+                    {{ footer_section.developer_name }}
+                </span>
+
+            {% endif %}
+
+        </p>
+
+    </div>
+
+</footer>
+
+{% endif %}

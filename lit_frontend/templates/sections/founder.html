@@ -1,0 +1,130 @@
+{% load static %}
+
+{% if founder %}
+
+<section class="founder-section" id="founder">
+
+    <!-- Optional Background Image -->
+
+    {% if founder.background_image %}
+
+        <img src="{{ founder.background_image.url }}"
+             class="founder-background-image"
+             alt=""
+             aria-hidden="true">
+
+    {% endif %}
+
+
+    <div class="founder-container">
+
+        <div class="founder-card">
+
+            <!-- LEFT SIDE FOUNDER IMAGE -->
+
+            <div class="founder-image-wrapper">
+
+                {% if founder.image %}
+
+                    <img src="{{ founder.image.url }}"
+                         alt="{{ founder.name }}"
+                         class="founder-image">
+
+                {% else %}
+
+                    <img src="{% static 'images/foundation.png' %}"
+                         alt="{{ founder.name }}"
+                         class="founder-image">
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- RIGHT SIDE FOUNDER CONTENT -->
+
+            <div class="founder-content">
+
+                <h2 class="founder-name">
+
+                    {{ founder.name }}
+
+                </h2>
+
+
+                <p class="founder-designation">
+
+                    {{ founder.designation }}
+
+                </p>
+
+
+                <div class="founder-description">
+
+                    {% if founder.description_one %}
+
+                        <p>{{ founder.description_one }}</p>
+
+                    {% endif %}
+
+
+                    {% if founder.description_two %}
+
+                        <p>{{ founder.description_two }}</p>
+
+                    {% endif %}
+
+
+                    {% if founder.description_three %}
+
+                        <p>{{ founder.description_three }}</p>
+
+                    {% endif %}
+
+
+                    {% if founder.description_four %}
+
+                        <p>{{ founder.description_four }}</p>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- FOUNDER QUOTE -->
+
+                {% if founder.quote %}
+
+                    <blockquote class="founder-quote">
+
+                        “{{ founder.quote }}”
+
+                    </blockquote>
+
+                {% endif %}
+
+
+                <!-- ABOUT FOUNDER BUTTON -->
+
+                {% if founder.button_text and founder.button_link %}
+
+                    <a href="{{ founder.button_link }}"
+                       class="founder-button">
+
+                        {{ founder.button_text }}
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}

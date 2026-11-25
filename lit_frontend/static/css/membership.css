@@ -1,0 +1,325 @@
+/* ==========================================
+   MEMBERSHIP REGISTRATION FORM
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f1df;
+    font-family: "Roboto", sans-serif;
+    color: #202124;
+}
+
+.membership-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 15px 15px 40px;
+}
+
+
+/* ==========================================
+   LOGO BANNER
+========================================== */
+
+.membership-banner {
+    width: 100%;
+    height: 165px;
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.membership-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ==========================================
+   FORM HEADING
+========================================== */
+
+.membership-heading {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-top: 10px solid #d3a43d;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.membership-heading h1 {
+    font-size: 32px;
+    font-weight: 400;
+    padding: 22px 25px 15px;
+}
+
+.membership-heading > p {
+    padding: 0 25px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.membership-required {
+    border-top: 1px solid #dadce0;
+    padding: 17px 25px;
+    color: #d93025;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   INPUT CARDS
+========================================== */
+
+.membership-field-card {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 28px 25px 32px;
+    margin-bottom: 12px;
+    min-height: 140px;
+}
+
+.membership-field-card label {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.required-star {
+    color: #d93025;
+    margin-left: 3px;
+}
+
+.membership-field-card input {
+    display: block;
+    width: 50%;
+    min-width: 220px;
+    max-width: 100%;
+    padding: 10px 0 8px;
+    border: none;
+    border-bottom: 1px solid #dadce0;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    color: #202124;
+    transition: border-color 0.2s ease;
+}
+
+.membership-field-card input::placeholder {
+    color: #80868b;
+}
+
+.membership-field-card input:focus {
+    border-bottom: 2px solid #d3a43d;
+}
+
+.membership-field-card:focus-within {
+    border-color: #d3a43d;
+}
+
+
+/* ==========================================
+   VALIDATION ERRORS
+========================================== */
+
+.field-error,
+.form-errors {
+    color: #d93025;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.membership-privacy {
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 15px 0;
+}
+
+
+/* ==========================================
+   SUBMIT AND CLEAR BUTTONS
+========================================== */
+
+.membership-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.membership-submit {
+    background-color: #a96a22;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 26px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership-submit:hover {
+    background-color: #8c5317;
+}
+
+.membership-clear {
+    border: none;
+    background: transparent;
+    color: #a96a22;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.membership-clear:hover {
+    background-color: rgba(169, 106, 34, 0.08);
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   FORM FOOTER
+========================================== */
+
+.membership-footer {
+    margin-top: 22px;
+    text-align: center;
+    color: #777777;
+}
+
+.membership-footer p {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.membership-footer a {
+    display: inline-block;
+    color: #a96a22;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 18px 0;
+}
+
+.membership-footer a:hover {
+    text-decoration: underline;
+}
+
+.membership-footer h3 {
+    font-size: 20px;
+    color: #14213d;
+    margin: 10px 0;
+}
+
+
+/* ==========================================
+   SUCCESS PAGE
+========================================== */
+
+.membership-success-card {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-top: 10px solid #d3a43d;
+    border-radius: 10px;
+    padding: 45px 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 65px;
+    color: #299653;
+    margin-bottom: 20px;
+}
+
+.membership-success-card h1 {
+    color: #14213d;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.membership-success-card p {
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.membership-back-button {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #a96a22;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .membership-container {
+        padding: 10px 15px 30px;
+    }
+
+    .membership-banner {
+        height: 145px;
+    }
+
+    .membership-heading h1 {
+        font-size: 27px;
+        padding: 20px;
+    }
+
+    .membership-heading > p {
+        padding: 0 20px 18px;
+    }
+
+    .membership-required {
+        padding: 15px 20px;
+    }
+
+    .membership-field-card {
+        padding: 24px 20px;
+        min-height: 130px;
+    }
+
+    .membership-field-card input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .membership-field-card label {
+        font-size: 14px;
+    }
+
+    .membership-success-card {
+        padding: 30px 20px;
+    }
+
+}
