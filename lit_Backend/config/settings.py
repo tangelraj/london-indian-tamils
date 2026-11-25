@@ -270,27 +270,22 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # ==========================================
 # MEDIA FILES
-# LOCAL AND RENDER CONFIGURATION
+# ADMIN UPLOADED IMAGES AND VIDEOS
 # ==========================================
 
-if DEBUG:
+MEDIA_URL = "/media/"
 
-    # Local development
+MEDIA_ROOT = Path(
 
-    MEDIA_URL = "/media/"
+    os.environ.get(
 
-    MEDIA_ROOT = BASE_DIR / "media"
+        "MEDIA_ROOT",
 
-else:
+        str(BASE_DIR / "media")
 
-    # Render deployment
-    # Serve existing public images copied to static
-
-    MEDIA_URL = "/static/website_media/"
-
-    MEDIA_ROOT = (
-        FRONTEND_DIR / "static" / "website_media"
     )
+
+)
 
 
 # ==========================================
@@ -326,8 +321,9 @@ STORAGES = {
 }
 
 
-# Keep original static filenames available
-# Required for existing public media image URLs
+# ==========================================
+# WHITENOISE CONFIGURATION
+# ==========================================
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = False
 
