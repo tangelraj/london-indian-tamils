@@ -1,0 +1,721 @@
+[
+{
+  "model": "website.websitesettings",
+  "pk": 1,
+  "fields": {
+    "logo": "website/logo.png",
+    "site_name": "London Indian Tamils",
+    "short_name": "(LIT)",
+    "tagline": "CONNECT • SUPPORT • CELEBRATE",
+    "description": "India in our heart. London in our home. Tamil in our identity.",
+    "button_text": "JOIN LIT",
+    "button_link": "#join"
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 1,
+  "fields": {
+    "title": "About",
+    "link": "#about",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 2,
+  "fields": {
+    "title": "Founder",
+    "link": "#founder",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 3,
+  "fields": {
+    "title": "Community",
+    "link": "#community",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 4,
+  "fields": {
+    "title": "Events",
+    "link": "#events",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 5,
+  "fields": {
+    "title": "Voices",
+    "link": "#voices",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 6,
+  "fields": {
+    "title": "Join LIT",
+    "link": "#join",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "website.navigationlink",
+  "pk": 7,
+  "fields": {
+    "title": "Contact",
+    "link": "#contact",
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "website.herosection",
+  "pk": 1,
+  "fields": {
+    "badge_text": "LONDON • தமிழ் • INDIA • UK",
+    "title": "Connecting Indian Tamils Across",
+    "highlighted_title": "London & the UK",
+    "description": "London Indian Tamils (LIT) is a growing community bringing together Tamil-speaking people of Indian origin living across the UK.",
+    "sub_description": "Meet people. Make friends. Discover opportunities. Support one another. Celebrate our culture.",
+    "background_image": "hero/tower-bridge.jpeg",
+    "primary_button_text": "JOIN LIT",
+    "primary_button_link": "#join",
+    "secondary_button_text": "VIEW EVENTS",
+    "secondary_button_link": "#events"
+  }
+},
+{
+  "model": "website.floatingbutton",
+  "pk": 1,
+  "fields": {
+    "title": "Phone",
+    "icon": "phone",
+    "link": "tel:+918792694177",
+    "background_color": "#E3A63B",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.floatingbutton",
+  "pk": 2,
+  "fields": {
+    "title": "Email",
+    "icon": "mail",
+    "link": "",
+    "background_color": "#701D25",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.floatingbutton",
+  "pk": 3,
+  "fields": {
+    "title": "Instagram",
+    "icon": "instagram",
+    "link": "",
+    "background_color": "#C13584",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.aboutsection",
+  "pk": 1,
+  "fields": {
+    "eyebrow": "ABOUT LIT",
+    "title": "More Than a WhatsApp Group.",
+    "highlighted_title": "A Community.",
+    "description": "London Indian Tamils (LIT) is a growing community bringing together Tamil-speaking people of Indian origin living across the UK – a place to meet people, make friends, discover opportunities, support one another and celebrate our culture.",
+    "secondary_description": "A place to build friendships, share opportunities, support businesses and careers, celebrate our culture and participate in social, educational, sporting and community activities.",
+    "image": "",
+    "background_image": "",
+    "badge_title": "தமிழ்",
+    "badge_subtitle": "ONE COMMUNITY"
+  }
+},
+{
+  "model": "website.aboutfeature",
+  "pk": 1,
+  "fields": {
+    "number": "01",
+    "title": "Connect",
+    "description": "Meet people, make friends and build personal and professional connections.",
+    "icon": "fa-solid fa-users",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.aboutfeature",
+  "pk": 2,
+  "fields": {
+    "number": "02",
+    "title": "Support",
+    "description": "Share opportunities, support careers and businesses and help one another.",
+    "icon": "fa-solid fa-handshake-angle",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.aboutfeature",
+  "pk": 3,
+  "fields": {
+    "number": "03",
+    "title": "Celebrate",
+    "description": "Celebrate our Tamil language, Indian roots, culture, festivals, music, food and traditions.",
+    "icon": "fa-solid fa-wand-magic-sparkles",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.foundersection",
+  "pk": 1,
+  "fields": {
+    "name": "Sathish Duraisamy",
+    "designation": "Founder & Director, London Indian Tamils",
+    "image": "",
+    "description_one": "London Indian Tamils was founded by Sathish Duraisamy with a simple vision - to create a stronger, more connected and supportive community for Tamil-speaking Indians living across the UK.",
+    "description_two": "Having lived in the UK for many years and been actively involved in community, cultural and social initiatives, Sathish wanted to create a platform that goes beyond events and WhatsApp conversations - a community where people can build friendships, support careers and businesses, share opportunities and celebrate Tamil culture together.",
+    "description_three": "Sathish has been involved in community and cultural initiatives in the UK for many years. He previously served as Secretary of the South Indian Society (SIS) and is also the Founder & Director of I for India and E for Events, through which he has organised and supported a wide range of Indian cultural, social and entertainment activities in the UK.",
+    "description_four": "His vision for LIT is to bring people together across generations, professions and locations, creating meaningful connections and a community that supports one another.",
+    "quote": "LIT is about people, relationships and creating something valuable for the community - together.",
+    "button_text": "ABOUT SATHISH",
+    "button_link": "#founder",
+    "background_image": "",
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitysection",
+  "pk": 1,
+  "fields": {
+    "top_text": "A growing UK community • Social • Careers • Business • Sports • Families • Marketplace • Events",
+    "eyebrow": "OUR COMMUNITY",
+    "title": "There's Something",
+    "highlighted_title": "for Everyone",
+    "background_image": "",
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 1,
+  "fields": {
+    "number": "01",
+    "title": "Social",
+    "description": "Meet-ups, friendships and good times together.",
+    "icon": "fa-solid fa-users",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 2,
+  "fields": {
+    "number": "02",
+    "title": "Jobs & Careers",
+    "description": "Openings, referrals and career guidance.",
+    "icon": "fa-solid fa-briefcase",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 3,
+  "fields": {
+    "number": "03",
+    "title": "Business & Networking",
+    "description": "Connect, collaborate and support businesses and professionals within our community.",
+    "icon": "fa-solid fa-store",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 4,
+  "fields": {
+    "number": "04",
+    "title": "Marketplace",
+    "description": "Buy, sell and recommend within the community.",
+    "icon": "fa-solid fa-bag-shopping",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 5,
+  "fields": {
+    "number": "05",
+    "title": "Politics & Current Affairs",
+    "description": "Respectful discussion on UK, Indian and Tamil-related politics and current affairs.",
+    "icon": "fa-solid fa-bullhorn",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 6,
+  "fields": {
+    "number": "06",
+    "title": "Sports & Fitness",
+    "description": "Cricket, badminton, runs and staying active.",
+    "icon": "fa-solid fa-trophy",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 7,
+  "fields": {
+    "number": "07",
+    "title": "Kids & Education",
+    "description": "Tamil learning, schools and family support.",
+    "icon": "fa-solid fa-graduation-cap",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "website.communitycard",
+  "pk": 8,
+  "fields": {
+    "number": "08",
+    "title": "Events & Activities",
+    "description": "Festivals, trips, music and celebrations.",
+    "icon": "fa-solid fa-calendar-check",
+    "custom_icon": "",
+    "is_highlighted": false,
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "website.eventssection",
+  "pk": 1,
+  "fields": {
+    "eyebrow": "EVENTS",
+    "title": "Meet. Celebrate.",
+    "highlighted_title": "Connect.",
+    "description": "LIT brings our online community together through real-world experiences.",
+    "categories": "Social Meet-ups • Live Music • Cultural Events • Open Mic • Family Activities • Sports • Networking • Day Trips • Festivals",
+    "background_image": "",
+    "is_active": true
+  }
+},
+{
+  "model": "website.event",
+  "pk": 1,
+  "fields": {
+    "badge_text": "FEATURED EVENT",
+    "title": "Christmas Market:",
+    "subtitle": "Bath Day Trip",
+    "year": "2026",
+    "image": "",
+    "event_date": "2026-12-12",
+    "pickup_details": "Pick-up 9:00 AM at Hillingdon Station and 9:30 AM at M4 Reading Services Westbound",
+    "price": "£15 per person including children",
+    "price_note": "(food and drinks not included.)",
+    "button_text": "BOOK NOW",
+    "button_link": "https://www.tickettailor.com/events/LIT",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.festiveeventsection",
+  "pk": 1,
+  "fields": {
+    "title": "A Festive Day Out for the Whole Family!",
+    "description": "Shop, explore and soak in the magic of Christmas at the Bath Christmas Market. See the flier and watch the video for all the details.",
+    "flyer_image": "festive/flyers/christmas-flyer.png",
+    "flyer_button_text": "View the full flier",
+    "video_thumbnail": "",
+    "video_file": "",
+    "video_url": "",
+    "video_button_text": "Watch the video",
+    "booking_title": "Book Your Seat Today - Limited Seats!",
+    "event_date": "2026-12-12",
+    "pickup_details": "Pick-up: Hillingdon Station 9:00 AM & M4 Reading Services 9:30 AM",
+    "price": "£15 per person including children",
+    "button_text": "BOOK NOW",
+    "button_link": "",
+    "instagram_text": "Follow LIT on",
+    "instagram_username": "@londonindiantamils",
+    "instagram_link": "https://www.instagram.com/londonindiantamils/",
+    "is_active": true
+  }
+},
+{
+  "model": "website.pasteventsection",
+  "pk": 1,
+  "fields": {
+    "title": "Deepavali Kondattam – An Evening of Music, Nostalgia & Celebration",
+    "event_date": "2026-10-31",
+    "location": "London",
+    "introduction": "An unforgettable evening of music, memories and togetherness!",
+    "description": "London Indian Tamils (LIT) celebrated Deepavali with a wonderful musical evening featuring singer M J Shriram, bringing the magic of Tamil cinema’s golden musical era to life.\n\nThe evening was filled with much-loved songs, particularly the timeless musical combinations of S. P. Balasubrahmanyam (SPB) and Ilaiyaraaja. These evergreen classics brought back beautiful memories, with audiences singing along and reliving the music that has touched generations.\n\nA special highlight was M J Shriram’s energetic performance, entertaining the audience with nearly 3.5 hours of non-stop singing. His wit, humour and engaging interaction made the evening as entertaining as it was nostalgic.\n\nBeyond the music, it was a wonderful opportunity for families and friends to come together, celebrate Deepavali and enjoy the warmth of our Tamil community.\n\nOur heartfelt thanks to M J Shriram, everyone who attended, and all our supporters and volunteers who helped make this celebration memorable.",
+    "quote": "A night of songs, smiles and memories that will stay with us for a long time!",
+    "gallery_title": "Relive the Moments",
+    "gallery_description": "Explore the photographs from our Deepavali Kondattam and revisit the special moments from the evening.",
+    "organisation_name": "London Indian Tamils (LIT)",
+    "tagline": "CONNECT • SUPPORT • CELEBRATE",
+    "button_text": "VIEW THE EVENT PHOTO GALLERY",
+    "button_link": "",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.eventhighlightsection",
+  "pk": 1,
+  "fields": {
+    "title": "Deepavali Kondattam Highlights",
+    "description": "Relive the music, colour and celebration from our Deepavali Kondattam evening.",
+    "thumbnail": "",
+    "video_url": "",
+    "video_button_text": "Watch the highlights on Instagram",
+    "gallery_title": "Thank You for Celebrating With Us",
+    "event_date": "2026-10-31",
+    "location": "Cranford Suite, TW5 9PD",
+    "gallery_button_text": "VIEW THE EVENT PHOTO GALLERY",
+    "gallery_url": "",
+    "instagram_text": "Watch more from LIT on",
+    "instagram_username": "@londonindiantamils",
+    "instagram_url": "https://www.instagram.com/londonindiantamils/",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.voicessection",
+  "pk": 1,
+  "fields": {
+    "eyebrow": "VOICES OF SUPPORT",
+    "title": "Messages to the",
+    "highlighted_title": "LIT Community",
+    "description": "We're grateful to have received special messages of support and encouragement for London Indian Tamils from respected personalities from the Tamil community.",
+    "instagram_text": "Follow",
+    "instagram_username": "@londonindiantamils",
+    "instagram_description": "for more community stories, messages and updates.",
+    "instagram_url": "https://www.instagram.com/londonindiantamils/",
+    "is_active": true
+  }
+},
+{
+  "model": "website.voicemessage",
+  "pk": 1,
+  "fields": {
+    "name": "Srinivas",
+    "designation": "Singer",
+    "image": "",
+    "button_text": "Watch Message",
+    "video_url": "",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.voicemessage",
+  "pk": 2,
+  "fields": {
+    "name": "Unni Krishnan",
+    "designation": "Singer",
+    "image": "",
+    "button_text": "Watch Message",
+    "video_url": "",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.voicemessage",
+  "pk": 3,
+  "fields": {
+    "name": "Gopinath",
+    "designation": "Neeya Naana",
+    "image": "",
+    "button_text": "Watch Message",
+    "video_url": "",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.voicemessage",
+  "pk": 4,
+  "fields": {
+    "name": "Dushyanth Sridhar",
+    "designation": "Speaker & Author",
+    "image": "",
+    "button_text": "Watch Message",
+    "video_url": "",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinsection",
+  "pk": 1,
+  "fields": {
+    "title": "Join",
+    "highlighted_title": "London Indian Tamils",
+    "description": "Tamil-speaking Indian living in the UK?",
+    "sub_description": "Become part of our growing community.",
+    "background_image": "",
+    "button_text": "JOIN NOW",
+    "button_link": "",
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinbenefit",
+  "pk": 1,
+  "fields": {
+    "title": "Connect with people",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinbenefit",
+  "pk": 2,
+  "fields": {
+    "title": "Make friends",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinbenefit",
+  "pk": 3,
+  "fields": {
+    "title": "Find opportunities",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinbenefit",
+  "pk": 4,
+  "fields": {
+    "title": "Support businesses",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinbenefit",
+  "pk": 5,
+  "fields": {
+    "title": "Attend events",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "website.joinbenefit",
+  "pk": 6,
+  "fields": {
+    "title": "Celebrate together",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "website.socialmediasection",
+  "pk": 1,
+  "fields": {
+    "eyebrow": "SOCIAL MEDIA",
+    "title": "Stay Connected",
+    "highlighted_title": "With LIT",
+    "description": "Follow us for community news, event announcements, photos, videos and activities.",
+    "is_active": true
+  }
+},
+{
+  "model": "website.socialmedialink",
+  "pk": 1,
+  "fields": {
+    "platform": "INSTAGRAM",
+    "display_name": "@londonindiantamils",
+    "icon": "fa-brands fa-instagram",
+    "url": "https://www.instagram.com/londonindiantamils/",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.socialmedialink",
+  "pk": 2,
+  "fields": {
+    "platform": "FACEBOOK",
+    "display_name": "London Indian Tamils",
+    "icon": "fa-brands fa-facebook-f",
+    "url": "",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.contactsection",
+  "pk": 1,
+  "fields": {
+    "eyebrow": "CONTACT",
+    "title": "London Indian Tamils",
+    "location": "London, United Kingdom",
+    "email": "londonindiantamils@gmail.com",
+    "phone": "07940 173183",
+    "founder_name": "Sathish Duraisamy",
+    "founder_designation": "Founder & Director",
+    "is_active": true
+  }
+},
+{
+  "model": "website.contactbutton",
+  "pk": 1,
+  "fields": {
+    "title": "CALL",
+    "icon": "fa-solid fa-phone",
+    "link": "tel:+447940173183",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.contactbutton",
+  "pk": 2,
+  "fields": {
+    "title": "EMAIL",
+    "icon": "fa-regular fa-envelope",
+    "link": "mailto:londonindiantamils@gmail.com",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.contactbutton",
+  "pk": 3,
+  "fields": {
+    "title": "INSTAGRAM",
+    "icon": "fa-brands fa-instagram",
+    "link": "https://www.instagram.com/londonindiantamils/",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "website.contactbutton",
+  "pk": 4,
+  "fields": {
+    "title": "FACEBOOK",
+    "icon": "fa-brands fa-facebook-f",
+    "link": "",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "website.footersection",
+  "pk": 1,
+  "fields": {
+    "title": "LONDON INDIAN TAMILS",
+    "tagline": "CONNECT • SUPPORT • CELEBRATE",
+    "description": "India in our heart. London in our home. Tamil in our identity.",
+    "copyright_text": "© 2026 London Indian Tamils. All Rights Reserved.",
+    "developer_text": "Designed & Developed by",
+    "developer_name": "Vetri IT Systems",
+    "developer_url": "",
+    "is_active": true
+  }
+},
+{
+  "model": "website.footersociallink",
+  "pk": 1,
+  "fields": {
+    "name": "Facebook",
+    "icon": "fa-brands fa-facebook-f",
+    "url": "",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.footersociallink",
+  "pk": 2,
+  "fields": {
+    "name": "Instagram",
+    "icon": "fa-brands fa-instagram",
+    "url": "https://www.instagram.com/londonindiantamils/",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.footerpolicylink",
+  "pk": 1,
+  "fields": {
+    "title": "Privacy Policy",
+    "link": "",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "website.footerpolicylink",
+  "pk": 2,
+  "fields": {
+    "title": "Community Guidelines",
+    "link": "",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "website.footerpolicylink",
+  "pk": 3,
+  "fields": {
+    "title": "Cookie settings",
+    "link": "",
+    "order": 3,
+    "is_active": true
+  }
+}
+]
