@@ -97,7 +97,13 @@ INSTALLED_APPS = [
 
     "django.contrib.messages",
 
+    # Cloudinary Storage
+
+    "cloudinary_storage",
+
     "django.contrib.staticfiles",
+
+    "cloudinary",
 
     # Website Application
 
@@ -183,6 +189,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # ==========================================
 # DATABASE CONFIGURATION
+# ==========================================
 # Local Development: SQLite
 # Production: PostgreSQL when DATABASE_URL is set
 # ==========================================
@@ -270,31 +277,80 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # ==========================================
 # MEDIA FILES
-# LOCAL AND RENDER CONFIGURATION
+# LOCAL DEVELOPMENT
 # ==========================================
 
-if DEBUG:
+MEDIA_URL = "/media/"
 
-    # Local development
+MEDIA_ROOT = BASE_DIR / "media"
 
-    MEDIA_URL = "/media/"
 
-    MEDIA_ROOT = BASE_DIR / "media"
+# ==========================================
+# CLOUDINARY CONFIGURATION
+# ==========================================
 
-else:
+CLOUDINARY_STORAGE = {
 
-    # Render deployment
-    # Serve existing public images copied to static
+    "CLOUD_NAME": os.environ.get(
+        "CLOUDINARY_CLOUD_NAME",
+        ""
+    ),
 
-    MEDIA_URL = "/static/website_media/"
+    "API_KEY": os.environ.get(
+        "CLOUDINARY_API_KEY",
+        ""
+    ),
 
-    MEDIA_ROOT = (
-        FRONTEND_DIR / "static" / "website_media"
-    )
+    "API_SECRET": os.environ.get(
+        "CLOUDINARY_API_SECRET",
+        ""
+    ),
+
+}
+
+
+# ==========================================
+# CLOUDINARY VALIDATION
+# ==========================================
+
+if not DEBUG:
+
+    from django.core.exceptions import ImproperlyConfigured
+
+    required_cloudinary_settings = [
+
+        "CLOUD_NAME",
+
+        "API_KEY",
+
+        "API_SECRET",
+
+    ]
+
+    missing_cloudinary_settings = [
+
+        key
+
+        for key in required_cloudinary_settings
+
+        if not CLOUDINARY_STORAGE.get(key)
+
+    ]
+
+    if missing_cloudinary_settings:
+
+        raise ImproperlyConfigured(
+            "Missing Cloudinary configuration: "
+            + ", ".join(missing_cloudinary_settings)
+        )
 
 
 # ==========================================
 # FILE STORAGE CONFIGURATION
+# ==========================================
+# Local: Django FileSystemStorage
+# Production: Cloudinary
+# Static files: WhiteNoise
 # ==========================================
 
 STORAGES = {
@@ -302,7 +358,15 @@ STORAGES = {
     "default": {
 
         "BACKEND": (
+
             "django.core.files.storage.FileSystemStorage"
+
+            if DEBUG
+
+            else
+
+            "cloudinary_storage.storage.MediaCloudinaryStorage"
+
         ),
 
     },
@@ -326,8 +390,9 @@ STORAGES = {
 }
 
 
-# Keep original static filenames available
-# Required for existing public media image URLs
+# ==========================================
+# WHITENOISE CONFIGURATION
+# ==========================================
 
 WHITENOISE_KEEP_ONLY_HASHED_FILES = False
 
