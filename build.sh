@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-set -o errexit
+set -e
 
-cd lit_backend
+cd "$(dirname "$0")"
+
+cd lit_Backend
 
 python -m pip install -r requirements.txt
 
