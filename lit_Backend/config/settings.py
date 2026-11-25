@@ -70,7 +70,6 @@ CSRF_TRUSTED_ORIGINS = [
     if origin.strip()
 ]
 
-
 if RENDER_EXTERNAL_HOSTNAME:
 
     render_origin = f"https://{RENDER_EXTERNAL_HOSTNAME}"
@@ -184,9 +183,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # ==========================================
 # DATABASE CONFIGURATION
-# ==========================================
 # Local Development: SQLite
-# Production: PostgreSQL
+# Production: PostgreSQL when DATABASE_URL is set
 # ==========================================
 
 DATABASES = {
@@ -272,22 +270,27 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # ==========================================
 # MEDIA FILES
-# ADMIN UPLOADED IMAGES AND VIDEOS
+# LOCAL AND RENDER CONFIGURATION
 # ==========================================
 
-MEDIA_URL = "/media/"
+if DEBUG:
 
-MEDIA_ROOT = Path(
+    # Local development
 
-    os.environ.get(
+    MEDIA_URL = "/media/"
 
-        "MEDIA_ROOT",
+    MEDIA_ROOT = BASE_DIR / "media"
 
-        str(BASE_DIR / "media")
+else:
 
+    # Render deployment
+    # Serve existing public images copied to static
+
+    MEDIA_URL = "/static/website_media/"
+
+    MEDIA_ROOT = (
+        FRONTEND_DIR / "static" / "website_media"
     )
-
-)
 
 
 # ==========================================
@@ -321,6 +324,12 @@ STORAGES = {
     },
 
 }
+
+
+# Keep original static filenames available
+# Required for existing public media image URLs
+
+WHITENOISE_KEEP_ONLY_HASHED_FILES = False
 
 
 # ==========================================
