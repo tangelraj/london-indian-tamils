@@ -10,69 +10,168 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>London Indian Tamils (LIT)</title>
+    <title>
+        {% block title %}
+        London Indian Tamils (LIT)
+        {% endblock %}
+    </title>
 
-    <!-- Google Fonts -->
+    <!-- ==========================================
+         GOOGLE FONTS
+    =========================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet">
 
-    <!-- Font Awesome -->
+
+    <!-- ==========================================
+         FONT AWESOME ICONS
+    =========================================== -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Main CSS -->
+
+    <!-- ==========================================
+         MAIN STYLESHEET
+         Global, Hero, About, Founder, Community
+    =========================================== -->
 
     <link rel="stylesheet"
           href="{% static 'css/style.css' %}">
 
-    <!-- Section CSS -->
+
+    <!-- ==========================================
+         EVENTS SECTION
+    =========================================== -->
 
     <link rel="stylesheet"
           href="{% static 'css/events.css' %}">
 
+
+    <!-- ==========================================
+         FESTIVE EVENTS SECTION
+    =========================================== -->
+
     <link rel="stylesheet"
           href="{% static 'css/festive.css' %}">
+
+
+    <!-- ==========================================
+         PAST EVENTS SECTION
+    =========================================== -->
 
     <link rel="stylesheet"
           href="{% static 'css/past_events.css' %}">
 
+
+    <!-- ==========================================
+         EVENT HIGHLIGHTS SECTION
+    =========================================== -->
+
     <link rel="stylesheet"
           href="{% static 'css/highlights.css' %}">
+
+
+    <!-- ==========================================
+         VOICES OF SUPPORT SECTION
+    =========================================== -->
 
     <link rel="stylesheet"
           href="{% static 'css/voices.css' %}">
 
+
+    <!-- ==========================================
+         JOIN LIT SECTION
+    =========================================== -->
+
     <link rel="stylesheet"
           href="{% static 'css/join.css' %}">
+
+
+    <!-- ==========================================
+         SOCIAL MEDIA SECTION
+    =========================================== -->
 
     <link rel="stylesheet"
           href="{% static 'css/social.css' %}">
 
+
+    <!-- ==========================================
+         CONTACT SECTION
+    =========================================== -->
+
     <link rel="stylesheet"
           href="{% static 'css/contact.css' %}">
+
+
+    <!-- ==========================================
+         FOOTER SECTION
+    =========================================== -->
 
     <link rel="stylesheet"
           href="{% static 'css/footer.css' %}">
 
-    <!-- Fixed Navbar CSS - Load Last -->
+
+    <!-- ==========================================
+         MEMBERSHIP FORM
+    =========================================== -->
 
     <link rel="stylesheet"
-          href="{% static 'css/navbar.css' %}?v=2">
+          href="{% static 'css/membership.css' %}">
+
+
+    <!-- ==========================================
+         FIXED NAVBAR - LOAD LAST
+    =========================================== -->
+
+    <link rel="stylesheet"
+          href="{% static 'css/navbar.css' %}">
+
+
+    <!-- ADDITIONAL PAGE STYLES -->
+
+    {% block extra_css %}
+    {% endblock %}
 
 </head>
 
+
 <body>
+
+    <!-- ==========================================
+         WEBSITE CONTENT
+    =========================================== -->
 
     {% block content %}
     {% endblock %}
 
-    <!-- JavaScript -->
+
+    <!-- ==========================================
+         MAIN JAVASCRIPT
+    =========================================== -->
 
     <script src="{% static 'js/main.js' %}"></script>
 
+
+    <!-- ==========================================
+         FESTIVE EVENTS JAVASCRIPT
+    =========================================== -->
+
     <script src="{% static 'js/festive.js' %}"></script>
+
+
+    <!-- ADDITIONAL PAGE JAVASCRIPT -->
+
+    {% block extra_js %}
+    {% endblock %}
 
 </body>
 
